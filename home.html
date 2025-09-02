@@ -19,7 +19,7 @@
       <div class="flex items-center">
         <img src="./assets/Group.png" alt="Logo" class="w-10 h-10">
         <div class="ml-2">
-          <h2 class="text-lg font-bold">$<span>45000</span></h2>
+          <h2 class="text-lg font-bold">$<span id="available-balance">45000</span></h2>
           <p class="text-sm text-gray-500">Available Balance</p>
         </div>
       </div>
@@ -40,11 +40,11 @@
 
     <!-- Services -->
     <div class="grid grid-cols-3 gap-3 px-4">
-      <div class="flex flex-col items-center justify-center p-3 bg-white border shadow-sm rounded-xl">
+      <div id="add-money-button" class="flex flex-col items-center justify-center p-3 bg-white border shadow-sm rounded-xl">
         <img src="./assets/wallet1.png" class="w-8 h-8 mb-2" alt="">
         <p class="text-sm font-medium">Add Money</p>
       </div>
-      <div class="flex flex-col items-center justify-center p-3 bg-white border shadow-sm rounded-xl">
+      <div id="cash-out-button" class="flex flex-col items-center justify-center p-3 bg-white border shadow-sm rounded-xl">
         <img src="./assets/send1.png" class="w-8 h-8 mb-2" alt="">
         <p class="text-sm font-medium">Cashout</p>
       </div>
@@ -67,14 +67,14 @@
     </div>
 
     <!-- Add Money Form -->
-    <div class="p-4">
+    <div id="add-money-form"  style="display: none;" class="p-4">
       <h2 class="mb-3 text-lg font-bold">Add Money</h2>
       <div class="p-4 bg-gray-100 rounded-xl">
         
         <!-- Select Bank -->
         <div class="mb-4">
           <label class="block mb-1 text-sm font-medium">Select A Bank</label>
-          <select class="w-full p-3 text-sm border border-gray-300 rounded-full">
+          <select id="bank" class="w-full p-3 text-sm border border-gray-300 rounded-full">
             <option disabled selected>Select bank</option>
             <option>Islami Bank</option>
             <option>City Bank</option>
@@ -88,30 +88,61 @@
         <!-- Bank Account -->
         <div class="mb-4">
           <label class="block mb-1 text-sm font-medium">Bank Account Number</label>
-          <input type="text" placeholder="Enter 11 digit account number"
+          <input id="account-number" type="text" placeholder="Enter 11 digit account number"
             class="w-full p-3 text-sm border border-gray-300 rounded-full" />
         </div>
 
         <!-- Amount -->
         <div class="mb-4">
           <label class="block mb-1 text-sm font-medium">Amount to Add</label>
-          <input type="text" placeholder="Add Amount to withdraw"
+          <input id="add-amount" type="text" placeholder="Add Amount to withdraw"
             class="w-full p-3 text-sm border border-gray-300 rounded-full" />
         </div>
 
         <!-- Pin -->
         <div class="mb-4">
           <label class="block mb-1 text-sm font-medium">Pin Number</label>
-          <input type="password" placeholder="Enter 4 digit pin number"
+          <input id="add-pin" type="password" placeholder="Enter 4 digit pin number"
             class="w-full p-3 text-sm border border-gray-300 rounded-full" />
         </div>
 
         <!-- Submit Button -->
-        <button class="w-full p-3 font-medium text-white bg-blue-500 rounded-full hover:bg-blue-600">
+        <button id="add-money-btn" class="w-full p-3 font-medium text-white bg-blue-500 rounded-full hover:bg-blue-600">
           Add Money
         </button>
       </div>
     </div>
+    <div id="cash-out-form" class="p-4">
+      <h1 class="mb-3 text-lg font-bold">Cash Out</h1>
+       <div class="p-4 bg-gray-100 rounded-xl">        
+        <!-- Agent Number -->
+        <div class="mb-4">
+          <label class="block mb-1 text-sm font-medium">Agent Number</label>
+          <input id="agent-number" type="text" placeholder="Enter 11 digit agent number"
+            class="w-full p-3 text-sm border border-gray-300 rounded-full" />
+        </div>
+
+        <!-- Amount -->
+        <div class="mb-4">
+          <label class="block mb-1 text-sm font-medium">Amount</label>
+          <input id="withdraw-amount" type="text" placeholder="Enter Amount to withdraw"
+            class="w-full p-3 text-sm border border-gray-300 rounded-full" />
+        </div>
+
+        <!-- Pin -->
+        <div class="mb-4">
+          <label class="block mb-1 text-sm font-medium">Pin Number</label>
+          <input id="withdraw-pin" type="password" placeholder="Enter 4 digit pin number"
+            class="w-full p-3 text-sm border border-gray-300 rounded-full" />
+        </div>
+
+        <!-- Submit Button -->
+        <button id="withdraw-money-btn" class="w-full p-3 font-medium text-white bg-blue-500 rounded-full hover:bg-blue-600">
+          Withdraw Money
+        </button>
+      </div>
+    </div>
   </div>
+  <script src="./home.js"></script>
 </body>
 </html>
